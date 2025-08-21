@@ -1,4 +1,3 @@
-
 from team_selection import choose_team
 from players_list_scraper import get_players_names_and_ID
 from games_list_scraper import get_games_list

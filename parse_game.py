@@ -23,10 +23,10 @@ def parse_games() -> Team:
     # iterate over all the team's games:
     for game in team.games:
         parse_game(game.game_ID, game.date, team)
-    for pid in team.team_players.keys():
-        print(team.team_players[pid].involvements)
-        print("number of involvements:", len(team.team_players[pid].involvements))
-        print(team.team_players[pid].player_name)
+    # for pid in team.team_players.keys():
+    #     print(team.team_players[pid].involvements)
+    #     print("number of involvements:", len(team.team_players[pid].involvements))
+    #     print(team.team_players[pid].player_name)
     return team
 
 
