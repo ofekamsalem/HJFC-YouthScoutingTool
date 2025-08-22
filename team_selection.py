@@ -6,31 +6,33 @@ def load_config():
         return json.load(f)
 
 # it works!
-def choose_option(options, prompt):
+def choose_option(options):
     for index, option in enumerate(options, 1):
         print(f"{index}. {option}")
     while True:
         try:
-            choice = int(input(prompt))
+            choice = int(input("> "))
             if 1 <= choice <= len(options):
                 return options[choice - 1]
             # if the user entered wrong number:
             else:
-                print("תכניס מספר בין 1-4")
+                print("enter a valid number")
         except ValueError:
-                print("תכניס מספר בין 1-4")
+                print("enter a valid number")
 
 
 # choose a team:
 def choose_team() -> dict:
     config = load_config()
     clubs_names = list(config["clubs"].keys())
-    chosen_club = choose_option(clubs_names,"תבחר מועדון - מספר בין 1-4")
+    print('Choose a club: enter a number from 1-4')
+    chosen_club = choose_option(clubs_names)
     print(f"\nSelected club: {chosen_club}\n")
     club_id = config['clubs'][chosen_club]['club id']
     club_teams = config['clubs'][chosen_club]['club teams']
     team_names = [team['team name'] for team in club_teams]
-    chosen_team = choose_option(team_names,"תבחר קבוצה - מספר בין 1-3")
+    print('Choose a team: enter a number from 1-3')
+    chosen_team = choose_option(team_names)
     team_id = None
     for team in club_teams:
         if team['team name'] == chosen_team:
