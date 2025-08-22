@@ -39,6 +39,7 @@ def choose_team() -> dict:
             team_id = team['team id']
             break
     print(f"\nSelected team: {chosen_team}\n")
+    print('Scraping in progress, HTML file will be ready soon...')
     base_team_url = config['base team url']
     team_url = base_team_url.format(team_id=team['team id'])
     team_details = {

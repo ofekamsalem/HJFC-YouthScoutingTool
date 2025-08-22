@@ -82,4 +82,4 @@ filename = "players_" + datetime.now().strftime("%d-%m-%Y_%H-%M-%S") + ".html"
 with open(filename, "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print("נשמר:", filename)
+print("New file:", filename)
